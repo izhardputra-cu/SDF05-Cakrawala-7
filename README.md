@@ -1,23 +1,33 @@
-# Kelompok 7
+# SDF05 - Kelompok 7
 
-## Anggota Kelompok
+Repository ini berisi kumpulan tugas kelompok mata kuliah Software Development
+Fundamentals (SDF05).
 
-- Riefli Alifiansyah Ramadhan — 24120310011 (Ketua, sedang cuti)
-- M. Febri Anggoro — 24120300025
-- Deva Agriani — 25120300026
-- Muhammad Miftahhul Fauzi — 25120300009
-- Izhar Rahman Dwiputra — 25120300032
+## Anggota kelompok
 
-## File
+- Riefli Alifiansyah Ramadhan - 24120310011 - sedang cuti
+- M. Febri Anggoro - 24120300025 - sedang cuti
+- Deva Agriani - 25120300026 - [@devaagriani](https://github.com/devaagriani)
+- Muhammad Miftahhul Fauzi - 25120300009 - [@AmadeusTao](https://github.com/AmadeusTao)
+- Izhar Rahman Dwiputra - 25120300032 - [@izhardputra-cu](https://github.com/izhardputra-cu)
 
-- `Kelompok7-Task2.py` berisi hasil refactoring kode perhitungan total pesanan.
-- `SOAL_DAN_RENCANA.md` berisi soal dan rencana pengerjaan kelompok.
-- `README.md` berisi informasi kelompok dan refleksi pengerjaan.
+## Struktur repository
 
-## Refleksi
+```text
+sdf05-grup-7/
+|-- tugas-1/             # refactoring clean code
+`-- tugas-2-monolitik/   # modularisasi domain, storage, dan CLI
+```
 
-Dari tugas ini kami belajar bahwa kode yang bisa dijalankan belum tentu mudah dibaca oleh orang lain. Nama fungsi dan variabel yang terlalu singkat membuat kami harus membaca seluruh kode terlebih dahulu untuk memahami kegunaannya.
+- [`tugas-1/`](tugas-1/) berisi hasil refactoring penamaan dan fungsi.
+- [`tugas-2-monolitik/`](tugas-2-monolitik/) berisi hasil pemisahan project
+  monolitik menjadi domain, service, adapter, dan CLI.
 
-Kami mengganti nama fungsi dan variabel menjadi lebih jelas. Fungsi utama juga dibagi menjadi beberapa fungsi kecil untuk menghitung subtotal, total item, diskon, dan ongkir. Setelah diperbaiki, alur program menjadi lebih mudah dipahami dan setiap fungsi mempunyai tugasnya masing-masing.
+## Alur kontribusi Tugas 2
 
-Kami juga mencoba menjalankan kembali program dengan data yang sama untuk memastikan hasilnya tidak berubah. Dari pengerjaan ini kami memahami bahwa Clean Code penting karena dapat memudahkan kerja kelompok dan membantu anggota lain saat membaca atau melanjutkan kode.
+1. Izhar membuka pengerjaan dengan domain dan interface storage.
+2. Deva mengerjakan user service.
+3. Miftahhul Fauzi mengerjakan file adapter dan CLI.
+4. Izhar menutup pengerjaan dengan integrasi, dokumentasi, dan test akhir.
+
+Setiap bagian dikerjakan melalui branch dan pull request masing-masing.
