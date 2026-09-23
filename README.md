@@ -22,12 +22,3 @@ sdf05-grup-7/
 - [`tugas-1/`](tugas-1/) berisi hasil refactoring penamaan dan fungsi.
 - [`tugas-2-monolitik/`](tugas-2-monolitik/) berisi hasil pemisahan project
   monolitik menjadi domain, service, adapter, dan CLI.
-
-## Alur kontribusi Tugas 2
-
-1. Izhar membuka pengerjaan dengan domain dan interface storage.
-2. Deva mengerjakan user service.
-3. Miftahhul Fauzi mengerjakan file adapter dan CLI.
-4. Izhar menutup pengerjaan dengan integrasi, dokumentasi, dan test akhir.
-
-Setiap bagian dikerjakan melalui branch dan pull request masing-masing.

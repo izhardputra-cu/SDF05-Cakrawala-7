@@ -1,29 +1,38 @@
 import unittest
 
-from services.user_service import create_user
+from services.user_service import create_user, list_users
 
 
 class UserServiceTest(unittest.TestCase):
-    def test_create_user_saves_user(self):
-        saved_users = []
+    def test_create_user_uses_storage_contract(self):
+        users = []
 
-        def load_users():
-            return []
+        def loader():
+            return users
 
-        def save_users(updated_users):
-            saved_users.extend(updated_users)
+        def saver(updated_users):
+            users[:] = updated_users
 
-        user = create_user(" Alice ", "ALICE@example.com", load_users, save_users)
+        user = create_user(" Bob ", "BOB@example.com", loader, saver)
 
-        self.assertEqual(user, {"name": "Alice", "email": "alice@example.com"})
-        self.assertEqual(saved_users, [user])
+        self.assertEqual(user["id"], 1)
+        self.assertEqual(users[0]["email"], "bob@example.com")
 
-    def test_create_user_rejects_invalid_name(self):
-        def load_users():
-            return []
+    def test_duplicate_email_is_rejected(self):
+        users = [{"id": 1, "name": "Alice", "email": "alice@example.com"}]
 
-        with self.assertRaisesRegex(ValueError, "Name cannot be empty"):
-            create_user("   ", "alice@example.com", load_users, lambda users: None)
+        with self.assertRaisesRegex(ValueError, "Email already exists"):
+            create_user(
+                "Another Alice",
+                "ALICE@example.com",
+                lambda: users,
+                lambda _: None,
+            )
+
+    def test_list_users_uses_loader(self):
+        users = [{"id": 1, "name": "Alice", "email": "alice@example.com"}]
+
+        self.assertEqual(list_users(lambda: users), users)
 
 
 if __name__ == "__main__":
